@@ -1,10 +1,6 @@
 #pragma once
-
+#include "aurorapch.h"
 #include "Aurora/Core.h"
-
-// std
-#include <string>
-#include <functional>
 
 // todo: add comments explaining the code
 
