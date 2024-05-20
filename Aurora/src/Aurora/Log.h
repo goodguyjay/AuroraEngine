@@ -6,15 +6,15 @@
 #include "Core.h"
 #include "spdlog/spdlog.h"
 
-namespace aurora
+namespace Aurora
 {
     class AURORA_API Log
     {
     public:
         static void init();
 
-        inline static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
-        inline static std::shared_ptr<spdlog::logger>& GetClientLogger() { return s_ClientLogger; }
+        inline static std::shared_ptr<spdlog::logger>& getCoreLogger() { return s_CoreLogger; }
+        inline static std::shared_ptr<spdlog::logger>& getClientLogger() { return s_ClientLogger; }
 
     private:
         static std::shared_ptr<spdlog::logger> s_CoreLogger;
@@ -23,15 +23,15 @@ namespace aurora
 }
 
 // Core Log macros
-#define AURORA_CORE_TRACE(...)  ::aurora::Log::GetCoreLogger()->trace(__VA_ARGS__)
-#define AURORA_CORE_INFO(...)   ::aurora::Log::GetCoreLogger()->info(__VA_ARGS__)
-#define AURORA_CORE_WARN(...)   ::aurora::Log::GetCoreLogger()->warn(__VA_ARGS__)
-#define AURORA_CORE_ERROR(...)  ::aurora::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define AURORA_CORE_FATAL(...)  ::aurora::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+#define AURORA_CORE_TRACE(...)  ::Aurora::Log::getCoreLogger()->trace(__VA_ARGS__)
+#define AURORA_CORE_INFO(...)   ::Aurora::Log::getCoreLogger()->info(__VA_ARGS__)
+#define AURORA_CORE_WARN(...)   ::Aurora::Log::getCoreLogger()->warn(__VA_ARGS__)
+#define AURORA_CORE_ERROR(...)  ::Aurora::Log::getCoreLogger()->error(__VA_ARGS__)
+#define AURORA_CORE_FATAL(...)  ::Aurora::Log::getCoreLogger()->fatal(__VA_ARGS__)
 
 // Client Log macros
-#define AURORA_TRACE(...)       ::aurora::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define AURORA_INFO(...)        ::aurora::Log::GetClientLogger()->info(__VA_ARGS__)
-#define AURORA_WARN(...)        ::aurora::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define AURORA_ERROR(...)       ::aurora::Log::GetClientLogger()->error(__VA_ARGS__)
-#define AURORA_FATAL(...)       ::aurora::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define AURORA_TRACE(...)       ::Aurora::Log::getClientLogger()->trace(__VA_ARGS__)
+#define AURORA_INFO(...)        ::Aurora::Log::getClientLogger()->info(__VA_ARGS__)
+#define AURORA_WARN(...)        ::Aurora::Log::getClientLogger()->warn(__VA_ARGS__)
+#define AURORA_ERROR(...)       ::Aurora::Log::getClientLogger()->error(__VA_ARGS__)
+#define AURORA_FATAL(...)       ::Aurora::Log::getClientLogger()->fatal(__VA_ARGS__)

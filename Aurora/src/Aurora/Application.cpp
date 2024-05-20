@@ -1,6 +1,6 @@
 #include "Application.h"
 
-namespace aurora
+namespace Aurora
 {
 	Application::Application()
 	{
