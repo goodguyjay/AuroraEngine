@@ -1,7 +1,6 @@
 #pragma once
 
-// lousy fucking hack because im lazy
-#include "../Core.h"
+#include "Aurora/Core.h"
 
 // std
 #include <string>
@@ -33,7 +32,7 @@ namespace Aurora
 	};
 
 #define EVENT_CLASS_TYPE(type) static EventType getStaticType() { return EventType::##type; }\
-								virtual EventType getEventType() const override { return GetStaticType(); }\
+								virtual EventType getEventType() const override { return getStaticType(); }\
 								virtual const char* getName() const override { return #type; }
 
 #define EVENT_CLASS_CATEGORY(category) virtual int getCategoryFlags() const override { return category; }
@@ -65,5 +64,28 @@ namespace Aurora
 	{
 		template<typename T>
 		using EventFn = std::function<bool(T&)>;
+
+	public:
+		EventDispatcher(Event& event)
+			: m_Event(event) {}
+
+		template<typename T>
+		bool dispatch(EventFn<T> func)
+		{
+			if (m_Event.getEventType() == T::getStaticType())
+			{
+				m_Event.m_Handled = func(*(T*)&m_Event);
+				return true;
+			}
+			return false;
+		}
+
+	private:
+		Event& m_Event;
 	};
+
+	inline std::ostream& operator<<(std::ostream& os, const Event& e)
+	{
+		return os << e.toString();
+	}
 }

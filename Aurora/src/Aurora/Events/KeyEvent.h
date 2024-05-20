@@ -9,7 +9,7 @@ namespace Aurora
 	class AURORA_API KeyEvent : public Event
 	{
 	public:
-		[[nodiscard]] inline int getKeyCode() const { return m_KeyCode; }
+		[[nodiscard]] inline int getKeSyCode() const { return m_KeyCode; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 
@@ -19,7 +19,7 @@ namespace Aurora
 		KeyEvent(const int keycode)
 			: m_KeyCode(keycode) {}
 
-		// todo: fix naming rules to stop resharper from bitching
+		// todo: fix naming rules to stop resharper from complaining
 		int m_KeyCode;
 	};
 
@@ -39,10 +39,25 @@ namespace Aurora
 			return ss.str();
 		}
 
-		// the compiler is bitching for some reason, ill check later
 		EVENT_CLASS_TYPE(KeyPressed)
 
 	private:
 		int m_RepeatCount;
+	};
+
+	class AURORA_API KeyReleasedEvent : public KeyEvent
+	{
+	public:
+		KeyReleasedEvent(int keycode)
+			: KeyEvent(keycode) {}
+
+		[[nodiscard]] std::string toString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyReleasedEvent: " << m_KeyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyReleased)
 	};
 }

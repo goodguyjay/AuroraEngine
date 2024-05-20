@@ -3,8 +3,9 @@
 // std
 #include <memory>
 
-#include "Core.h"
+#include "Aurora/Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace Aurora
 {
