@@ -1,6 +1,6 @@
 #include <Aurora.h>
 
-class Sandbox : public aurora::Application
+class Sandbox : public Aurora::Application
 {
 public:
 	Sandbox() = default;
@@ -8,7 +8,7 @@ public:
 	~Sandbox() = default;
 };
 
-aurora::Application* aurora::create_application()
+Aurora::Application* Aurora::create_application()
 {
 	return new Sandbox();
 }

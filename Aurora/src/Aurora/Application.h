@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Core.h"
+#include "Aurora/Core.h"
+#include "Events/Event.h"
 
-namespace aurora
+namespace Aurora
 {
 	class AURORA_API Application
 	{
@@ -14,5 +15,6 @@ namespace aurora
 	};
 
 	// To de defined in CLIENT
+	// todo: change this
 	Application* create_application();
 }
