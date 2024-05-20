@@ -1,8 +1,5 @@
 ﻿#pragma once
 
-// std
-#include <memory>
-
 #include "Aurora/Core.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"

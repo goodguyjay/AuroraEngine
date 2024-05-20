@@ -2,9 +2,6 @@
 
 #include "Event.h"
 
-// std
-#include <sstream>
-
 namespace Aurora
 {
 	class AURORA_API WindowResizeEvent : public Event
