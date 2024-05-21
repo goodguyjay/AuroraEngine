@@ -3,5 +3,6 @@
 bin/
 bin-int/
 .idea/
+x64/
 
 *.user
