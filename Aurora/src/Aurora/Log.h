@@ -25,6 +25,7 @@ namespace Aurora
 #define AURORA_CORE_INFO(...)   ::Aurora::Log::getCoreLogger()->info(__VA_ARGS__)
 #define AURORA_CORE_WARN(...)   ::Aurora::Log::getCoreLogger()->warn(__VA_ARGS__)
 #define AURORA_CORE_ERROR(...)  ::Aurora::Log::getCoreLogger()->error(__VA_ARGS__)
+//#define AURORA_CORE_ASSERT(...)  ::Aurora::Log::getCoreLogger()->assert(__VA_ARGS__)
 #define AURORA_CORE_FATAL(...)  ::Aurora::Log::getCoreLogger()->fatal(__VA_ARGS__)
 
 // Client Log macros

@@ -2,8 +2,7 @@
 
 #include "Aurora/Window.h"
 
-// FIXME: This is a temporary solution to include GLFW
-#include "GLFW/glfw3.h"
+#include <GLFW/glfw3.h>
 
 namespace Aurora
 {

@@ -8,7 +8,7 @@ namespace Aurora
 {
 	Application::Application()
 	{
-
+		m_Window = std::unique_ptr<Window>(Window::create());
 	}
 
 	Application::~Application()
@@ -20,14 +20,10 @@ namespace Aurora
 	{
 		WindowResizeEvent e(1280, 720);
 
-		// todo: test this
-		if (e.isInCategory(EventCategoryApplication))
+		while (m_Running)
 		{
-			AURORA_TRACE("Event is in Application category");
-			AURORA_TRACE(e.toString());
+			m_Window->onUpdate();
 		}
-
-		while (true);
 	}
 
 }

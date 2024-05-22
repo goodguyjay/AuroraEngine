@@ -1,5 +1,7 @@
 #pragma once
 
+// std
+
 #include <iostream>
 #include <memory>
 #include <utility>
@@ -11,6 +13,8 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+
+#include "Aurora/Log.h"
 
 
 #ifdef AURORA_PLATFORM_WINDOWS
