@@ -1,8 +1,7 @@
 #pragma once
 
-#include "Aurora/Window.h"
-
 #include <GLFW/glfw3.h>
+#include "Aurora/Window.h"
 
 namespace Aurora
 {

@@ -1,4 +1,5 @@
 #include "aurorapch.h"
+
 #include "WindowsWindow.h"
 
 namespace Aurora
