@@ -9,9 +9,11 @@ inline int main(int argc, char** argv)
 {
 	Aurora::Log::init();
 
-	AURORA_CORE_TRACE("TEST TEST 123");
-	AURORA_CORE_INFO("TEST2");
-	AURORA_INFO("LALALAL");
+	AURORA_CORE_TRACE("disgrama o console ta colorido");
+	AURORA_CORE_INFO("que massa");
+	AURORA_INFO("corzinha pspsps");
+	AURORA_CORE_WARN("gatinho ei gatinho pspspspsps");
+	AURORA_CORE_ERROR("COWABUNGA");
 
 	const auto app = Aurora::create_application();
 	app->run();
