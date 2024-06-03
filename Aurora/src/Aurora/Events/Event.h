@@ -1,7 +1,6 @@
 #pragma once
 #include "aurorapch.h"
 #include "Aurora/Core.h"
-
 // todo: add comments explaining the code
 
 namespace Aurora
@@ -84,4 +83,5 @@ namespace Aurora
 	{
 		return os << e.toString();
 	}
+
 }

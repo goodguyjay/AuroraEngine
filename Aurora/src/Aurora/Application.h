@@ -14,6 +14,7 @@ namespace Aurora
 
 		[[noreturn]] void run();
 
+		void onEvent(Event& e);
 	private:
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
