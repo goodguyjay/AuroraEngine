@@ -15,7 +15,7 @@ inline int main(int argc, char** argv)
 	AURORA_CORE_WARN("gatinho ei gatinho pspspspsps");
 	AURORA_CORE_ERROR("COWABUNGA");
 
-	const auto app = Aurora::create_application();
+	const auto app = Aurora::createApplication();
 	app->run();
 	delete app;
 }

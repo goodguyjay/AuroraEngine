@@ -3,6 +3,8 @@
 #include <GLFW/glfw3.h>
 #include "Aurora/Window.h"
 
+struct GLFWwindow;
+
 namespace Aurora
 {
 	class WindowsWindow : public Window

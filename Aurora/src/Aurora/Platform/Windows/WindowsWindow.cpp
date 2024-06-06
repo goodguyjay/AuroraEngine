@@ -1,11 +1,15 @@
 #include "aurorapch.h"
 
+// SHOULD BE (MOSTLY) ALWAYS AT THE TOP
+#include <glad/glad.h>
+
 #include "WindowsWindow.h"
 
 #include "Aurora/Events/ApplicationEvent.h"
 #include "Aurora/Events/MouseEvent.h"
 #include "Aurora/Events/KeyEvent.h"
 #include <spdlog/fmt/ostr.h>
+
 
 namespace Aurora
 {
@@ -50,6 +54,8 @@ namespace Aurora
 
         m_Window = glfwCreateWindow((int)props.width, (int)props.height, m_Data.title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        AURORA_CORE_ASSERT(status, "Failed to initialize GLAD.");
         glfwSetWindowUserPointer(m_Window, &m_Data);
         setVSync(true);
 

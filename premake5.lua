@@ -13,9 +13,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Aurora/vendor/GLFW/include"
+IncludeDir["GLAD"] = "Aurora/vendor/GLAD/include"
 
 group "Dependencies"
     include "Aurora/vendor/GLFW"
+    include "Aurora/vendor/GLAD"
 
 group ""
 
@@ -42,14 +44,16 @@ project "Aurora"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.GLAD}"
     }
 
     links
     {
         "GLFW",
         "opengl32.lib",
-        "dwmapi.lib"
+        "dwmapi.lib",
+        "GLAD"
     }
 
     filter "system:windows"
@@ -59,7 +63,8 @@ project "Aurora"
         defines
         {
             "AURORA_PLATFORM_WINDOWS",
-            "AURORA_BUILD_DLL"
+            "AURORA_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
@@ -70,16 +75,19 @@ project "Aurora"
     filter "configurations:Debug"
         runtime "Debug"
         defines "AURORA_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         runtime "Release"
         defines "AURORA_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         runtime "Release"
         defines "AURORA_DIST"
+        buildoptions "/MD"
         optimize "On"
 
 project "Sandbox"
@@ -122,14 +130,17 @@ project "Sandbox"
     filter "configurations:Debug"
         runtime "Debug"
         defines "AURORA_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         runtime "Release"
         defines "AURORA_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         runtime "Release"
         defines "AURORA_DIST"
+        buildoptions "/MD"
         optimize "On"
