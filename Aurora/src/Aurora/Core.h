@@ -14,6 +14,14 @@
 	#error Aurora only supports Windows!
 #endif
 
+#ifdef AURORA_ENABLE_ASSERTS
+	#define AURORA_ASSERT(x, ...) { if(!(x)) { AURORA_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define AURORA_CORE_ASSERT(x, ...) { if(!(x)) { AURORA_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define AURORA_ASSERT(x, ...)
+	#define AURORA_CORE_ASSERT(x, ...)
+#endif
+
 // bitfield creation
 // this is a macro that takes an integer x and returns a bit shifted by x
 #define BIT(x) (1 << (x))

@@ -1,7 +1,6 @@
 #pragma once
 #include "aurorapch.h"
 #include "Aurora/Core.h"
-
 // todo: add comments explaining the code
 
 namespace Aurora
@@ -43,6 +42,7 @@ namespace Aurora
 		[[nodiscard]] virtual const char* getName() const = 0;
 		[[nodiscard]] virtual int getCategoryFlags() const = 0;
 		[[nodiscard]] virtual std::string toString() const { return getName(); }
+		virtual bool& getHandled() { return m_Handled; }
 
 		// todo: check if those const aren't making the code not work
 		[[nodiscard]] inline bool isInCategory(const EventCategory category) const
@@ -84,4 +84,5 @@ namespace Aurora
 	{
 		return os << e.toString();
 	}
+
 }
