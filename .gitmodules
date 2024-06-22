@@ -7,3 +7,6 @@
 [submodule "Aurora/vendor/glfw"]
 	path = Aurora/vendor/glfw
 	url = https://github.com/glfw/glfw.git
+[submodule "Aurora/vendor/imgui"]
+	path = Aurora/vendor/imgui
+	url = https://github.com/ocornut/imgui
