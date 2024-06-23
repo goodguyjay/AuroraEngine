@@ -14,10 +14,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Aurora/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Aurora/vendor/GLAD/include"
+IncludeDir["ImGui"] = "Aurora/vendor/imgui"
 
 group "Dependencies"
     include "Aurora/vendor/GLFW"
     include "Aurora/vendor/GLAD"
+    include "Aurora/vendor/imgui"
 
 group ""
 
@@ -45,7 +47,8 @@ project "Aurora"
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.GLAD}"
+        "%{IncludeDir.GLAD}",
+        "%{IncludeDir.ImGui}"
     }
 
     links
@@ -53,7 +56,8 @@ project "Aurora"
         "GLFW",
         "opengl32.lib",
         "dwmapi.lib",
-        "GLAD"
+        "GLAD",
+        "ImGui"
     }
 
     filter "system:windows"
