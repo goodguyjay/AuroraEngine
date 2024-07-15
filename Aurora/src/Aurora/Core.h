@@ -25,3 +25,5 @@
 // bitfield creation
 // this is a macro that takes an integer x and returns a bit shifted by x
 #define BIT(x) (1 << (x))
+
+#define AURORA_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
