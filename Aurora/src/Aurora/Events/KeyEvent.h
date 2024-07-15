@@ -27,6 +27,8 @@ namespace Aurora
 		KeyPressedEvent(int keycode, int repeatCount)
 			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
+		inline int getKeyCode() const { return m_KeyCode; }
+
 		[[nodiscard]] inline int getRepeatCount() const { return m_RepeatCount; }
 
 		[[nodiscard]] std::string toString() const override
@@ -49,6 +51,8 @@ namespace Aurora
 		KeyReleasedEvent(int keycode)
 			: KeyEvent(keycode) {}
 
+		inline int getKeyCode() const { return m_KeyCode; }
+
 		[[nodiscard]] std::string toString() const override
 		{
 			std::stringstream ss;
@@ -57,5 +61,23 @@ namespace Aurora
 		}
 
 		EVENT_CLASS_TYPE(KeyReleased)
+	};
+
+	class AURORA_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(int keycode)
+			: KeyEvent(keycode) {}
+
+		inline int getKeyCode() const { return m_KeyCode; }
+
+		std::string toString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << m_KeyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
 	};
 }
