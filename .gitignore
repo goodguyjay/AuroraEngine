@@ -4,5 +4,9 @@ bin/
 bin-int/
 .idea/
 x64/
+Aurora/x64
 
 *.user
+*.vcxproj
+*.vcproj.filters
+
