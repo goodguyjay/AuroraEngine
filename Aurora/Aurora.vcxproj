@@ -164,6 +164,7 @@
     <ClInclude Include="src\Aurora\Events\KeyEvent.h" />
     <ClInclude Include="src\Aurora\Events\MouseEvent.h" />
     <ClInclude Include="src\Aurora\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Aurora\Input.h" />
     <ClInclude Include="src\Aurora\Layer.h" />
     <ClInclude Include="src\Aurora\LayerStack.h" />
     <ClInclude Include="src\Aurora\Log.h" />
@@ -171,6 +172,7 @@
     <ClInclude Include="src\Aurora\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Aurora\Window.h" />
     <ClInclude Include="src\aurorapch.h" />
+    <ClInclude Include="src\Aurora\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Aurora\Application.cpp" />
@@ -183,6 +185,7 @@
     <ClCompile Include="src\aurorapch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Aurora\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

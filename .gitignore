@@ -6,7 +6,9 @@ bin-int/
 x64/
 Aurora/x64
 
+# Files
 *.user
 *.vcxproj
 *.vcproj.filters
 *.sln
+GenerateProject*.*

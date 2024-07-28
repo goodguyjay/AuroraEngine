@@ -58,9 +58,6 @@
     <ClInclude Include="src\Aurora\Platform\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>Aurora\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Aurora\Platform\OpenGL\imgui_impl_opengl3_loader.h">
-      <Filter>Aurora\Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Aurora\Platform\Windows\WindowsWindow.h">
       <Filter>Aurora\Platform\Windows</Filter>
     </ClInclude>
@@ -68,6 +65,8 @@
       <Filter>Aurora</Filter>
     </ClInclude>
     <ClInclude Include="src\aurorapch.h" />
+    <ClInclude Include="src\Aurora\Input.h" />
+    <ClInclude Include="src\Aurora\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Aurora\Application.cpp">
@@ -92,5 +91,6 @@
       <Filter>Aurora\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\aurorapch.cpp" />
+    <ClCompile Include="src\Aurora\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>
