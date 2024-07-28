@@ -8,12 +8,12 @@ public:
 
 	void onUpdate() override
 	{
-		AURORA_INFO("ExampleLayer::Update");
+		//AURORA_INFO("ExampleLayer::Update");
 	}
 
 	void onEvent(Aurora::Event& event) override
 	{
-		AURORA_TRACE("{0}", event);
+		//AURORA_TRACE("{0}", event);
 	}
 };
 
