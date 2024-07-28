@@ -5,8 +5,6 @@
 
 #include <GLAD/glad.h>
 
-#include "Input.h"
-
 namespace Aurora
 {
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -66,9 +64,6 @@ namespace Aurora
 			{
 				layer->onUpdate();
 			}
-
-			auto [x, y] = Input::getMousePosition();
-			AURORA_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->onUpdate();
 		}

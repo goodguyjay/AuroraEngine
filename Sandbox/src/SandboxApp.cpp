@@ -9,6 +9,8 @@ public:
 	void onUpdate() override
 	{
 		//AURORA_INFO("ExampleLayer::Update");
+		if (Aurora::Input::isKeyPressed(AURORA_KEY_TAB))
+			AURORA_TRACE("Tab key is pressed (poll)!");
 	}
 
 	void onEvent(Aurora::Event& event) override
