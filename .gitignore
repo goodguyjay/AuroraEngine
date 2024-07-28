@@ -9,6 +9,6 @@ Aurora/x64
 # Files
 *.user
 *.vcxproj
-*.vcproj.filters
+*.vcxproj.filters
 *.sln
 GenerateProject*.*
