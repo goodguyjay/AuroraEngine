@@ -16,6 +16,7 @@ IncludeDir["GLFW"] = "Aurora/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Aurora/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Aurora/vendor/imgui"
 IncludeDir["glm"] = "Aurora/vendor/glm"
+IncludeDir["ImGuiBackends"] = "Aurora/vendor/imgui/backends"
 
 group "Dependencies"
     include "Aurora/vendor/GLFW"
@@ -52,7 +53,8 @@ project "Aurora"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLAD}",
         "%{IncludeDir.ImGui}",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.ImGuiBackends}"
     }
 
     links

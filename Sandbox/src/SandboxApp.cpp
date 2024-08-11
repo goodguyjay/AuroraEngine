@@ -25,7 +25,6 @@ public:
 	Sandbox()
 	{
 		pushLayer(new ExampleLayer());
-		pushOverlay(new Aurora::ImGuiLayer());
 	}
 
 	~Sandbox() = default;

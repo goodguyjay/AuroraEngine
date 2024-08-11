@@ -18,6 +18,9 @@ namespace Aurora
 
 		m_Window = std::unique_ptr<Window>(Window::create());
 		m_Window->setEventCallback(BIND_EVENT_FN(onEvent));
+
+		m_ImGuiLayer = new ImGuiLayer();
+		pushOverlay(m_ImGuiLayer);
 	}
 
 	Application::~Application()
@@ -61,9 +64,13 @@ namespace Aurora
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : m_LayerStack)
-			{
 				layer->onUpdate();
-			}
+
+			m_ImGuiLayer->begin();
+			for (Layer* layer : m_LayerStack)
+				layer->onImGuiRender();
+			m_ImGuiLayer->end();
+			
 
 			m_Window->onUpdate();
 		}

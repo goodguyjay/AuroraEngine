@@ -90,9 +90,6 @@
     <ClInclude Include="src\Aurora\MouseButtonCodes.h">
       <Filter>src\Aurora</Filter>
     </ClInclude>
-    <ClInclude Include="src\Aurora\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>src\Aurora\Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Aurora\Platform\Windows\WindowsInput.h">
       <Filter>src\Aurora\Platform\Windows</Filter>
     </ClInclude>
@@ -1358,6 +1355,9 @@
     <ClCompile Include="src\Aurora\Application.cpp">
       <Filter>src\Aurora</Filter>
     </ClCompile>
+    <ClCompile Include="src\Aurora\ImGui\ImGuiBuild.cpp">
+      <Filter>src\Aurora\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Aurora\ImGui\ImGuiLayer.cpp">
       <Filter>src\Aurora\ImGui</Filter>
     </ClCompile>
@@ -1369,9 +1369,6 @@
     </ClCompile>
     <ClCompile Include="src\Aurora\Log.cpp">
       <Filter>src\Aurora</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Aurora\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>src\Aurora\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Aurora\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Aurora\Platform\Windows</Filter>
